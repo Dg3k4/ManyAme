@@ -1,0 +1,87 @@
+.anime-page {
+  min-height: 100vh;
+  max-width: 90rem;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  color: var(--text-color);
+}
+.anime-page__container {
+  width: 100%;
+  border: var(--outline-color) 1px solid;
+  border-radius: 5px;
+  background-color: var(--background-color-main);
+  padding: 1rem;
+}
+.anime-page__container-up {
+  display: flex;
+  background-color: var(--background-color-main-lighter);
+}
+.anime-page__container-up__left {
+  min-height: 20rem;
+}
+.anime-page__container-up__left .anime-img {
+  display: flex;
+  height: 31.25rem;
+  width: 22rem;
+}
+.anime-page__container-up__left .anime-img__rating {
+  width: 6rem;
+  height: 40px;
+  position: absolute;
+  transform: translate(-11px, 1rem);
+}
+.anime-page__container-up__left .anime-img__rating svg {
+  fill: var(--rating-color);
+  position: absolute;
+}
+.anime-page__container-up__left .anime-img__rating-value {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 1.75rem;
+  padding-top: 0.5%;
+  margin-left: 0.5rem;
+}
+.anime-page__container-up__left .anime-img img {
+  width: 100%;
+  border-radius: 5px;
+}
+.anime-page__container-up__right {
+  width: 62.875rem;
+  font-size: 2rem;
+  padding: 0 1rem;
+}
+.anime-page__container-up__right .titles-rating-info {
+  display: flex;
+  flex-direction: column;
+}
+.anime-page__container-up__right .titles-rating-info .name {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 100%;
+}
+.anime-page__container-up__right .titles-rating-info .name > span {
+  word-wrap: break-word;
+}
+.anime-page__container-up__right .titles-rating-info .name .sub-names {
+  display: flex;
+  flex-direction: column;
+  margin: 0.25rem 0 0.75rem;
+  font-size: 0.6rem;
+  width: 40%;
+  color: var(--placeholder-color);
+}
+.anime-page__container-up__right .titles-rating-info .set-rating {
+  display: flex;
+  height: 2.5rem;
+  width: 16rem;
+}
+.anime-page__container-up__right .titles-rating-info .set-rating-star i {
+  width: 3rem;
+  font-size: 2.5rem;
+}
+/*# sourceMappingURL=animepagecomponent.css.map */

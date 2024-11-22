@@ -1,0 +1,63 @@
+.year-slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+}
+.year-slider .track {
+  width: 100%;
+  height: 0.25rem;
+  background-color: var(--background-color-main);
+  border-radius: 4px;
+}
+.year-slider .thumb {
+  position: relative;
+  width: 0.75rem;
+  height: 1.25rem;
+  background-color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--background-color-main) 1px solid;
+  border-radius: 0.25rem;
+}
+.year-slider .thumb.dragged .thumb-indicator {
+  background-color: var(--placeholder-color);
+}
+.year-slider .value {
+  padding: 0 0.15rem;
+}
+.year-slider .track {
+  height: 6px;
+  border-radius: 3px;
+  width: 100%;
+}
+.year-slider .slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 0.5rem;
+}
+.year-slider .slider span {
+  display: flex;
+  justify-content: center;
+  width: 5rem;
+}
+.flag {
+  position: absolute;
+  top: 1.75rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flag .thumb-value {
+  position: absolute;
+  padding-top: 4.5px;
+  font-size: 0.9rem;
+}
+.flag svg {
+  fill: var(--background-color-main);
+}
+/*# sourceMappingURL=yearslider.css.map */

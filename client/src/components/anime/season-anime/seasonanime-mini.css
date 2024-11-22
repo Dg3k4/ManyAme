@@ -1,0 +1,23 @@
+@media only screen and (max-width: 1100px) {
+  .main-page__container__season-anime-title {
+    font-size: 1.5rem;
+  }
+  .main-page__container__season-anime .animeItem__swiper {
+    padding: 1rem 0;
+  }
+  .main-page__container__season-anime .animeItem {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .main-page__container__season-anime-title {
+    padding-left: 1.3rem;
+  }
+  .main-page__container__season-anime .animeItem__swiper {
+    padding: 0.5rem;
+  }
+  .main-page__container__season-anime .animeItem {
+    width: 85%;
+  }
+}
+/*# sourceMappingURL=seasonanime-mini.css.map */

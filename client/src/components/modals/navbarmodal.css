@@ -1,0 +1,55 @@
+.navbar-modal {
+  border: var(--outline-color) 1px solid;
+  border-radius: 7px;
+  background-color: var(--background-color-main);
+  width: 135px;
+  top: -200px;
+  right: 37rem;
+  transform: translateX(51px);
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.navbar-modal__spacer {
+  position: fixed;
+}
+.navbar-modal__is-active {
+  animation: fade-in 0.3s forwards;
+}
+.navbar-modal__is-hiding {
+  animation: fade-out 0.3s forwards;
+}
+.navbar-modal__fields {
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  height: 35px;
+  font-size: 17px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 7px;
+  transition: 0.3s all ease;
+}
+.navbar-modal__fields:hover {
+  background-color: var(--background-color-main-lighter);
+}
+@keyframes fade-in {
+  0% {
+    top: -200px;
+  }
+  100% {
+    top: 84px;
+  }
+}
+@keyframes fade-out {
+  0% {
+    top: 84px;
+  }
+  100% {
+    top: -200px;
+  }
+}
+/*# sourceMappingURL=navbarmodal.css.map */

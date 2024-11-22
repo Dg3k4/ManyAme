@@ -1,0 +1,30 @@
+.my-input {
+  font-family: Rubik, sans-serif;
+  outline: none;
+  height: 41px;
+  width: 100%;
+  color: var(--text-color);
+  background-color: var(--background-color-main);
+  border: var(--outline-color) solid 1px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  z-index: 6;
+  padding: 0 15px 0 0;
+}
+.my-input input {
+  font-family: Rubik, sans-serif;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+  height: 100%;
+  width: 100%;
+  padding: 0 15px;
+}
+.my-input input::placeholder {
+  color: var(--placeholder-color);
+}
+/*# sourceMappingURL=myinput.css.map */

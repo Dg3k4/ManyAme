@@ -1,0 +1,56 @@
+@media only screen and (max-width: 1100px) {
+  .anime-search__container-content.grid-2 .anime-search__container-content__item {
+    height: 10.5rem;
+  }
+  .anime-search__container-content.grid-2 .anime-search__container-content__item-info {
+    font-size: 0.8rem;
+  }
+  .anime-search__container-content.grid-2 .anime-search__container-content__item .up-title {
+    font-size: 1rem;
+  }
+  .anime-search__container-content.grid-2 .anime-search__container-content__item .up-subtitles {
+    font-size: 0.6rem;
+  }
+  .anime-search__container-content.grid-2 .anime-search__container-content__item-img {
+    min-width: 7rem;
+    width: 7rem;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .anime-search__container-right {
+    font-size: 0.9rem;
+  }
+  .anime-search__container-sort {
+    margin: 1rem 0;
+  }
+  .anime-search__container-sort__by {
+    font-size: 1rem;
+  }
+  .anime-search__container-sort__grid i {
+    height: 1.4rem;
+    width: 1.65rem;
+  }
+  .anime-search__container-content.grid-2 .anime-search__container-content__item-info {
+    font-size: 0.7rem;
+  }
+  .anime-search__container-content.grid-2 .anime-search__container-content__item.anime-search__container-content__item {
+    height: 8rem;
+  }
+  .anime-search__container-content.grid-2 .anime-search__container-content__item.anime-search__container-content__item .up-title {
+    font-size: 0.8rem;
+  }
+  .anime-search__container-content.grid-2 .anime-search__container-content__item.anime-search__container-content__item .up-subtitles {
+    font-size: 0.6rem;
+  }
+  .anime-search__container-content.grid-2 .anime-search__container-content__item.anime-search__container-content__item .up-subtitles .show {
+    display: none;
+  }
+  .anime-search__container-content.grid-2 .anime-search__container-content__item-img {
+    min-width: 6rem;
+    width: 6rem;
+  }
+  .anime-list-title {
+    font-size: 1.5rem;
+  }
+}
+/*# sourceMappingURL=animesearchcomponent-mini.css.map */

@@ -1,0 +1,252 @@
+@import "../../utils/style/color";
+
+.navbar {
+    @hover-fade-material-dark();
+    width: 100%;
+    z-index: 6;
+    top: 0;
+    position: sticky;
+    background-color: @background-color-main;
+    border-bottom: @outline-color 1px solid;
+}
+
+.navbar__content {
+    background-color: @background-color-main;
+    height: 70px;
+    max-width: 90rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.5rem;
+    transition: all 0.2s ease;
+
+    &__left {
+        text-decoration: none;
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__logo-container {
+        background-color: @background-color-main;
+        padding: 10px;
+        position: relative;
+        z-index: 6;
+        border: @outline-color solid 1px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    &__logo {
+        color: @text-color;
+        font-family: AKONY, sans-serif;
+        font-size: 1.5rem;
+        height: 1.25rem;
+        text-decoration: none;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    &__change-theme {
+        height: 90px;
+        width: 90px;
+        position: absolute;
+        z-index: 6;
+        border-radius: 50%;
+        font-size: 40px;
+        border: transparent solid 2px;
+        background-color: @text-color;
+        cursor: pointer;
+        color: @background-color-main;
+        transition: all 0.25s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(-60%, -60%) rotate(90deg);
+
+        &-light {
+            height: 90px;
+            width: 90px;
+            position: absolute;
+            z-index: 6;
+            border-radius: 50%;
+            font-size: 40px;
+            border: transparent solid 2px;
+            background-color: @text-color;
+            cursor: pointer;
+            color: @background-color-main;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translate(-60%, -60%) rotate(-90deg);
+
+            &-icon-sun {
+                transform: translate(-35%, 35%) rotate(-20deg) scale(0.95);
+                transition: all 0.25s ease;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            &-icon-moon {
+                transform: translate(50%, -35%) rotate(-100deg) scale(0.95);
+                transition: all 0.25s ease;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &:hover {
+                background-color: @background-color-main;
+                color: @text-color;
+                box-shadow: 0 0 50px 15px @text-color, ;
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+
+        }
+
+        &-icon-sun {
+            transform: translate(-35%, 35%) rotate(-20deg) scale(0.95);
+            transition: all 0.25s ease;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &-icon-moon {
+            transform: translate(50%, -35%) rotate(-100deg) scale(0.95);
+            transition: all 0.25s ease;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &:hover {
+            background-color: @background-color-main;
+            color: @text-color;
+            box-shadow: 0 0 30px 1px @text-color, 0 0 50px 10px @text-color-darker;
+            transform: translate(-50%, -50%) rotate(-90deg);
+        }
+    }
+
+    &__menu {
+        position: relative;
+        z-index: 6;
+        height: 41px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: @outline-color solid 1px;
+        border-radius: 1000px;
+        background-color: @background-color-main;
+        overflow: hidden;
+
+        &-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 41px;
+            width: 41px;
+            border: @background-color-main 2px solid;
+            border-radius: 1000px;
+            transition: all 0.15s ease;
+            cursor: pointer;
+            overflow: hidden;
+
+            &:hover {
+                background-color: @background-color-main-lighter;
+            }
+
+            &-icon:active {
+                fill: @text-color;
+            }
+        }
+
+        &-content {
+            display: flex;
+            gap: 0.25rem;
+            padding: 0 1rem 0 0.25rem;
+
+            &__field {
+                max-width: 10rem;
+                padding: 0.25rem 0.5rem;
+            }
+
+            & a {
+                color: @text-color;
+                text-decoration: none;
+                font-size: 1rem;
+                transition: all 0.25s ease;
+                height: 100%;
+                border-radius: 100px;
+
+                &:hover {
+                    color: @placeholder-color;
+                }
+
+                &:active {
+                    color: @text-color;
+                    background-color: @background-color-main-lighter;
+                }
+            }
+
+            &__wrapper {
+                max-width: 0;
+
+                &.open {
+                    animation: menu-open 0.6s ease forwards;
+                }
+
+                &.close {
+                    animation: menu-close 0.3s ease forwards;
+                }
+            }
+        }
+    }
+}
+
+.size-1 {
+    width: 40px;
+    height: 40px;
+}
+
+.circle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+.circle-text text {
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+}
+
+@keyframes menu-open {
+    from {
+        max-width: 0;
+    }
+    to {
+        max-width: 30rem;
+    }
+}
+
+@keyframes menu-close {
+    from {
+        max-width: 30rem;
+    }
+    to {
+        max-width: 0;
+    }
+}

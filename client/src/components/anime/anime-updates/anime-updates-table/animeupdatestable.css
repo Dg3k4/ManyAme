@@ -1,0 +1,307 @@
+.table-anime-updates__container .today-yesterday-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 2rem;
+  width: 170px;
+  margin: 2rem 0 1rem 0;
+  border: var(--outline-color) 1px solid;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+.table-anime-updates__container .today-yesterday-switcher .today-switcher,
+.table-anime-updates__container .today-yesterday-switcher .yesterday-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  height: 100%;
+  flex-grow: 1;
+}
+.table-anime-updates__container .today-yesterday-switcher .today-switcher.active,
+.table-anime-updates__container .today-yesterday-switcher .yesterday-switcher.active {
+  background-color: var(--background-color-main-lighter);
+}
+.table-anime-updates__container .today-yesterday-switcher .today-switcher:hover,
+.table-anime-updates__container .today-yesterday-switcher .yesterday-switcher:hover {
+  background-color: var(--background-color-main-lighter);
+}
+.table-anime-updates__container .today-yesterday-switcher .today-switcher {
+  margin: 0 0 0 auto;
+}
+.table-anime-updates__container__content {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(10rem, 1fr));
+  gap: 0.25rem;
+}
+@media only screen and (max-width: 1500px) {
+  .table-anime-updates__container__content {
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  }
+}
+.table-anime-updates__container__content.switch-in {
+  animation: switching-in 0.3s ease forwards;
+}
+.table-anime-updates__container__content.switch-out {
+  animation: switching-out 0.3s ease forwards;
+}
+.table-anime-updates__container__content::-webkit-scrollbar-thumb {
+  background-color: var(--outline-color);
+  /* Цвет скрола */
+  border-radius: 4px;
+  width: 18px;
+}
+.table-anime-updates__container__content::-webkit-scrollbar-track {
+  border: none;
+  background-color: var(--background-color-main);
+  /* Цвет трека */
+  border-radius: 4px;
+}
+.table-anime-updates__container__content .anime-cell {
+  border-radius: 0.25rem;
+  position: relative;
+  width: 10rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  margin: 0.5rem auto;
+}
+.table-anime-updates__container__content .anime-cell::before {
+  transition: all 0.4s ease;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  border-radius: 0.25rem;
+  pointer-events: none;
+  z-index: 6;
+}
+.table-anime-updates__container__content .anime-cell:hover {
+  transform: scale(1.045);
+}
+.table-anime-updates__container__content .anime-cell:hover::before {
+  opacity: 0.75;
+}
+.table-anime-updates__container__content .anime-cell.active {
+  transition: all 0.4s ease;
+  transform: scale(1.045);
+}
+.table-anime-updates__container__content .anime-cell.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.75;
+  border-radius: 0.25rem;
+  pointer-events: none;
+}
+.table-anime-updates__container__content .anime-cell img {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.table-anime-updates__container__content .anime-cell:hover .anime-cell__title {
+  opacity: 1;
+}
+.table-anime-updates__container__content .anime-cell__title {
+  position: absolute;
+  z-index: 7;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+.table-anime-updates__container__content .anime-cell__title-value {
+  padding: 0.25rem 0.5rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #D4D4D4;
+  transition: all 0.2s ease;
+}
+.table-anime-updates__container__content .anime-cell__title-value:hover {
+  color: var(--placeholder-color);
+}
+.table-anime-updates__container__details {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  background-color: var(--background-color-main-lighter);
+}
+.table-anime-updates__container__details.active {
+  animation: details-open 0.3s forwards ease;
+  margin-bottom: 1rem;
+}
+.table-anime-updates__container__details.hidden {
+  animation: details-close 0.3s forwards ease;
+  margin-bottom: 1rem;
+}
+.table-anime-updates__container__details-value {
+  height: 100%;
+  display: flex;
+  opacity: 1;
+  animation: details-swapping-in 0.3s forwards ease;
+}
+.table-anime-updates__container__details-value.swap {
+  animation: details-swapping-out 0.3s forwards ease;
+}
+.table-anime-updates__container__details-value .anime-card {
+  position: relative;
+  height: 15rem;
+}
+.table-anime-updates__container__details-value .anime-card img {
+  height: 15rem;
+}
+.table-anime-updates__container__details-value .update-info {
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  flex-direction: column;
+  display: flex;
+}
+.table-anime-updates__container__details-value .update-info__title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+.table-anime-updates__container__details-value .update-info__title i {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.table-anime-updates__container__details-value .update-info__title i:hover {
+  color: var(--rating-color);
+}
+.table-anime-updates__container__details-value .update-info__title i:active {
+  transform: scale(0.9);
+}
+.table-anime-updates__container__details-value .update-info__container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  grid-auto-rows: auto;
+  padding-right: 0.5rem;
+  overflow-x: hidden;
+}
+.table-anime-updates__container__details-value .update-info__container::-webkit-scrollbar-thumb {
+  background-color: var(--outline-color);
+  /* Цвет скрола */
+  border-radius: 4px;
+  width: 18px;
+}
+.table-anime-updates__container__details-value .update-info__container::-webkit-scrollbar-track {
+  border: none;
+  background-color: var(--background-color-main);
+  /* Цвет трека */
+  border-radius: 4px;
+}
+.table-anime-updates__container__details-value .update-info__container__episode {
+  padding: 0.5rem;
+  border: var(--outline-color) 1px solid;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: var(--text-color);
+}
+.table-anime-updates__container__details-value .update-info__container__episode:hover {
+  background-color: var(--background-color-main-lighter);
+}
+.table-anime-updates__container__details-value .update-info__container__episode:active {
+  background-color: var(--placeholder-color);
+}
+.table-anime-updates__container__details-value .update-info__container__episode-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.table-anime-updates__container__details-value .update-info__container__episode .voiceover {
+  font-size: 0.8rem;
+}
+.table-anime-updates__container__wrap {
+  height: 30.75rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.table-anime-updates__container__wrap::-webkit-scrollbar-thumb {
+  background-color: var(--outline-color);
+  /* Цвет скрола */
+  border-radius: 4px;
+  width: 18px;
+}
+.table-anime-updates__container__wrap::-webkit-scrollbar-track {
+  border: none;
+  background-color: var(--background-color-main-lighter);
+  /* Цвет трека */
+  border-radius: 4px;
+}
+@keyframes details-open {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: 15rem;
+  }
+}
+@keyframes details-close {
+  from {
+    opacity: 1;
+    height: 15rem;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+  }
+}
+@keyframes details-swapping-in {
+  from {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes details-swapping-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+}
+@keyframes switching-in {
+  from {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes switching-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+}
+/*# sourceMappingURL=animeupdatestable.css.map */

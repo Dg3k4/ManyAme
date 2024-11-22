@@ -1,0 +1,30 @@
+@media only screen and (max-width: 1500px) {
+  .navbar__content {
+    max-width: 78rem;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .navbar__content {
+    max-width: 68rem;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .navbar__content {
+    max-width: 58rem;
+    padding: 0 2rem;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .navbar__content {
+    max-width: 53rem;
+    justify-content: end;
+  }
+  .navbar__content .navbar__content__change-theme-scale {
+    transform: scale(0.9);
+  }
+  .navbar__content__left {
+    position: absolute;
+    right: calc(50% - 134px);
+  }
+}
+/*# sourceMappingURL=navbar-mini.css.map */

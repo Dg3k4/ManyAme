@@ -1,0 +1,186 @@
+@font-face {
+  font-family: "AKONY";
+  src: url("../utils/fonst/akony/AKONY.woff2") format("woff2");
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v28/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8sDE0Uw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v28/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8tdE0Uw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v28/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8tvE0Uw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v28/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8uDFEUw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v28/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8u6FEUw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v28/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8vdFEUw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v28/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8v0FEUw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-WYi1UA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4i1UA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-NYi1UA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-2Y-1UA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-4I-1UA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-h4-1UA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-ro-1UA.ttf) format('truetype');
+}
+:root {
+  --background-color-main: #121212;
+  --background-color-main-lighter: #1f1f1f;
+  --outline-color: #323232;
+  --text-color: #D4D4D4;
+  --text-color-darker: #C8C8C8;
+  --placeholder-color: #D4D4D499;
+  --rating-color: #c3272b;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Rubik, sans-serif;
+}
+*::-webkit-scrollbar {
+  width: 7px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--outline-color);
+  /* Цвет скрола */
+  border-radius: 4px;
+  width: 18px;
+}
+*::-webkit-scrollbar-track {
+  border: none;
+  background-color: var(--background-color-main-lighter);
+  /* Цвет трека */
+  border-radius: 4px;
+}
+body {
+  min-height: 100vh;
+  overflow-y: hidden;
+}
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  /* Навбар фиксированный, контент растягивается, футер фиксированный */
+  width: 100%;
+  position: relative;
+  z-index: 6;
+  background-color: var(--background-color-main);
+}
+.app__back {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  height: 200%;
+  width: 400%;
+  transform: rotate(6deg);
+  background-color: var(--background-color-main);
+  background-image: radial-gradient(var(--background-color-main-lighter) 8%, transparent 10%);
+  background-position: 0 0;
+  background-size: 5vmin 5vmin;
+  pointer-events: none;
+  animation: background-up 82s infinite linear forwards;
+}
+.app__content {
+  position: relative;
+  overflow-y: auto;
+}
+.app .simplebar-scrollbar {
+  width: 10px;
+}
+.app .simplebar-scrollbar::before {
+  background-color: var(--outline-color);
+}
+.app .simplebar-scrollbar.simplebar-visible::before {
+  background-color: var(--outline-color);
+  opacity: 0.95;
+}
+.app .simplebar-scrollable-y,
+.app .simplebar-scrollable-y > div {
+  pointer-events: visible;
+}
+@keyframes background-up {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -100%;
+  }
+}
+/*# sourceMappingURL=app.css.map */

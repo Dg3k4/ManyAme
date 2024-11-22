@@ -1,0 +1,81 @@
+@import "../../style/color";
+
+.sort-selector .react-select__control {
+    background-color: @background-color-main; // Задний фон для селектора
+    color: @text-color; // Цвет текста внутри селектора
+    max-height: 100%;
+    min-height: auto;
+    max-width: 190px;
+    min-width: 190px;
+    border: @outline-color 1px solid;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sort-selector .react-select__control {
+    border-color: @outline-color;
+    box-shadow: none;
+}
+
+.sort-selector .react-select__control:hover {
+    box-shadow: none;
+    border: @placeholder-color 1px solid;
+}
+
+.sort-selector .react-select__menu {
+    background-color: @background-color-main; // Задний фон выпадающего меню
+    border-radius: 0.25rem;
+    margin: 0.25rem 0;
+    z-index: 100;
+}
+
+.sort-selector .react-select__menu-list {
+    border-radius: 0.25rem;
+    padding: 0;
+    border: @outline-color 1px solid;
+}
+
+.sort-selector .react-select__option {
+    background-color: @background-color-main; // Задний фон для опций
+    color: @text-color; // Цвет текста для опций
+    font-size: 1rem;
+    padding: 2px 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sort-selector .react-select__option:active {
+    background-color: @text-color;
+    color: @background-color-main;
+}
+
+.sort-selector .react-select__option--is-selected {
+    background-color: @background-color-main; // Фон для выбранной опции
+    color: @text-color; // Цвет текста для выбранной опции
+}
+
+.sort-selector .react-select__option--is-focused {
+    background-color: @placeholder-color; // Фон для фокусированной опции (hover эффект)
+    color: @text-color; // Цвет текста при наведении
+}
+
+.sort-selector .react-select__single-value {
+    color: @text-color; // Цвет текста выбранного значения
+    font-size: 1rem;
+}
+
+.sort-selector .react-select__value-container {
+}
+
+.sort-selector .react-select__indicator-separator {
+    display: none; // Убираем разделитель между иконкой и текстом
+}
+
+.sort-selector .react-select__dropdown-indicator {
+    color: @text-color; // Цвет иконки стрелки для раскрытия меню
+    padding: 0 5px 0 0;
+}
+
+
+
+

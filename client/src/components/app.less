@@ -1,0 +1,111 @@
+@import "../utils/style/color";
+@font-face {
+    font-family: "AKONY";
+    src: url("../utils/fonst/akony/AKONY.woff2") format("woff2");
+}
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --background-color-main: #121212;
+    --background-color-main-lighter: #1f1f1f;
+    --outline-color: #323232;
+    --text-color: #D4D4D4;
+    --text-color-darker: #C8C8C8;
+    --placeholder-color: #D4D4D499;
+    --rating-color: #c3272b;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Rubik, sans-serif;
+}
+
+*::-webkit-scrollbar {
+    width: 7px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: @outline-color; /* Цвет скрола */
+    border-radius: 4px;
+    width: 18px;
+}
+
+*::-webkit-scrollbar-track {
+    border: none;
+    background-color: @background-color-main-lighter; /* Цвет трека */
+    border-radius: 4px;
+}
+
+*::-webkit-scrollbar-button {
+
+}
+
+body {
+    min-height: 100vh;
+    overflow-y: hidden;
+}
+
+.app {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Навбар фиксированный, контент растягивается, футер фиксированный */
+    width: 100%;
+    position: relative;
+    z-index: 6;
+    background-color: @background-color-main;
+
+    &__back {
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        height: 200%;
+        width: 400%;
+        transform: rotate(6deg);
+        background-color: @background-color-main;
+        background-image: radial-gradient(
+                @background-color-main-lighter 8%,
+                transparent 10%
+        );
+        background-position: 0 0;
+        background-size: 5vmin 5vmin;
+        pointer-events: none;
+
+        animation: background-up 82s infinite linear forwards;
+    }
+
+    &__content {
+        position: relative;
+        overflow-y: auto;
+    }
+    .simplebar-scrollbar {
+        width: 10px;
+
+        &::before {
+            background-color: @outline-color;
+        }
+    }
+
+    .simplebar-scrollbar.simplebar-visible::before {
+        background-color: @outline-color;
+        opacity: 0.95;
+    }
+
+    .simplebar-track {
+
+    }
+
+    .simplebar-scrollable-y,
+    .simplebar-scrollable-y > div {
+        pointer-events: visible;
+    }
+}
+
+@keyframes background-up {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -100%;
+    }
+}

@@ -1,0 +1,97 @@
+@import "../style/color";
+
+.my-search-input-form {
+    position: relative;
+    z-index: 6;
+    background-color: @background-color-main;
+    border: @outline-color solid 1px;
+    border-radius: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 41px;
+    color: @placeholder-color;
+    margin-right: 10px;
+    transition: all 0.15s ease;
+
+    & button {
+        border-radius: 50%;
+        border: none;
+        background-color: transparent;
+    }
+
+    &.openInput #my-search-input {
+        animation: openInput 0.2s cubic-bezier(.19,.03,.53,.91) forwards;
+    }
+    &.closeInput #my-search-input {
+        animation: closeInput 0.2s cubic-bezier(.19,.03,.53,.91) forwards;
+
+     }
+
+    & i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        height: 39px;
+        width: 39px;
+        border: @background-color-main solid 2px;
+        border-radius: 50%;
+        color: @placeholder-color;
+
+        &:hover {
+            background-color: @background-color-main-lighter;
+        }
+        &:active {
+            color: @text-color;
+        }
+    }
+}
+
+#my-search-input {
+    font-family: Rubik, sans-serif;
+    outline: none;
+    height: 100%;
+    width: 0;
+    opacity: 0;
+    color: @text-color;
+    background-color: @background-color-main;
+    border: none;
+    border-radius: 511px;
+    padding-left: 0;
+    align-items: center;
+    position: relative;
+    z-index: 6;
+    transition: all 0.15s ease;
+
+    &::placeholder {
+        color: @placeholder-color;
+    }
+}
+
+@keyframes openInput {
+    from {
+        opacity: 0;
+        width: 0;
+        padding-left: 0;
+    }
+    to {
+        opacity: 1;
+        width: 310px;
+        padding-left: 5px;
+    }
+}
+
+@keyframes closeInput {
+    from {
+        opacity: 1;
+        width: 310px;
+        padding-left: 5px;
+    }
+    to {
+        opacity: 0;
+        width: 0;
+        padding-left: 0;
+    }
+}

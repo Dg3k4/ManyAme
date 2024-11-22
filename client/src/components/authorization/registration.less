@@ -1,0 +1,56 @@
+@import "../../utils/style/color";
+
+.registration-form {
+    height: 80%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 50px;
+    }
+
+    &__button {
+        color: @text-color;
+        position: relative;
+        z-index: 6;
+
+        & a {
+            color: @outline-color;
+            &:active {
+                color: @text-color;
+            }
+        }
+    }
+}
+
+.registration {
+    height: 310px;
+    width: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: @background-color-main;
+    border: @outline-color solid 1px;
+    border-radius: 5px;
+}
+
+.eye-password {
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:active {
+        color: @placeholder-color;
+    }
+}

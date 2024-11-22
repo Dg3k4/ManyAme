@@ -1,0 +1,122 @@
+.anime-release {
+  margin-top: 2rem;
+  height: 30.75rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.anime-release::-webkit-scrollbar-thumb {
+  background-color: var(--outline-color);
+  /* Цвет скрола */
+  border-radius: 4px;
+  width: 18px;
+}
+.anime-release::-webkit-scrollbar-track {
+  border: none;
+  background-color: var(--background-color-main-lighter);
+  /* Цвет трека */
+  border-radius: 4px;
+}
+.anime-release__list {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(10rem, 1fr));
+  gap: 0.25rem;
+}
+@media only screen and (max-width: 1500px) {
+  .anime-release__list {
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  }
+}
+.anime-release__list-item {
+  overflow: hidden;
+  max-height: 20rem;
+  width: 10rem;
+  border-radius: 0.25rem;
+  position: relative;
+  transition: all 0.4s ease;
+  margin: 0.5rem auto;
+  color: #D4D4D4;
+}
+.anime-release__list-item a {
+  color: #D4D4D4;
+}
+.anime-release__list-item::before {
+  transition: all 0.4s ease;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  border-radius: 0.25rem;
+  pointer-events: none;
+  z-index: 1;
+}
+.anime-release__list-item:hover {
+  transform: scale(1.045);
+}
+.anime-release__list-item:hover::before {
+  opacity: 0.75;
+}
+.anime-release__list-item__img img {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.anime-release__list-item__info {
+  position: absolute;
+  z-index: 7;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+.anime-release__list-item__info:hover {
+  opacity: 1;
+}
+.anime-release__list-item__info-episodes {
+  position: absolute;
+  max-width: 10rem;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.5rem;
+}
+.anime-release__list-item__info-year {
+  position: absolute;
+  max-width: 5rem;
+  right: 0;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.5rem;
+}
+.anime-release__list-item__info-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+}
+.anime-release__list-item__info-title .genres {
+  font-size: 0.75rem;
+  max-width: 10rem;
+}
+.anime-release__list-item__info-title .title-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.anime-release__list-item__info-title .title-wrapper .title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #D4D4D4;
+  cursor: context-menu;
+}
+.anime-release__all-anime {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+/*# sourceMappingURL=animerelease.css.map */

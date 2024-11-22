@@ -1,0 +1,314 @@
+@import "../../../utils/style/color";
+
+.season-anime {
+    background-color: @background-color-main;
+    border: @outline-color 1px solid;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 2.75rem;
+    position: relative;
+    margin-bottom: 3rem;
+
+    &__arrow-left {
+        position: absolute;
+        z-index: 1000;
+        left: 1rem;
+        top: 50%;
+        margin-right: 1rem;
+        width: 1.75rem;
+        height: 1.75rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        padding-right: 0.15rem;
+        cursor: pointer;
+
+        & .fa-chevrons-left {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        &-active {
+            animation: arrow-to-left 0.5s ease;
+            cursor: pointer;
+            pointer-events: none;
+        }
+
+        &:hover {
+            background-color: @background-color-main-lighter;
+        }
+
+    }
+
+    &__arrow-right {
+        position: absolute;
+        z-index: 1000;
+        right: 1rem;
+        top: 50%;
+        margin-left: 1rem;
+        width: 1.75rem;
+        height: 1.75rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        padding-left: 0.1rem;
+        cursor: pointer;
+
+        & .fa-chevrons-right {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        &-active {
+            animation: arrow-to-right 0.5s ease;
+            cursor: pointer;
+            pointer-events: none;
+        }
+
+        &:hover {
+            background-color: @background-color-main-lighter;
+        }
+
+    }
+
+    &-title {
+        padding-left: 0.75rem;
+        font-size: 2rem;
+    }
+
+    &-list {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding: 1rem;
+        overflow: hidden;
+    }
+
+    & .animeItem__swiper {
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    & .animeItem {
+        position: relative;
+        border-radius: 0.5rem;
+        user-select: none;
+        width: 100%;
+
+        &:hover .animeItem__animeTitle-value {
+            transform: translateY(0rem);
+        }
+
+        &__animeRating {
+            width: 45px;
+            height: 25px;
+            position: absolute;
+            z-index: 7;
+            display: flex;
+            margin-top: 0.5rem;
+            transform: translateX(-0.30rem);
+
+            & svg {
+                position: absolute;
+                z-index: -1;
+                fill: @rating-color;
+            }
+
+            &-value {
+                width: 100%;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                margin-left: 4px;
+                gap: 3px;
+                font-size: 0.9rem;
+
+                & i {
+                    font-size: 0.9rem;
+                }
+            }
+
+        }
+
+        &__animeImg{
+            height: 290px;
+            width: 100%;
+
+            & img {
+                width: 100%;
+                border-radius: 0.5rem;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        &__animeTitle {
+            position: absolute;
+            z-index: 6;
+            bottom: 0;
+            overflow: hidden;
+            width: 100%;
+            border-radius: 0 0 0.5rem 0.5rem;
+            transform: scale(1.01);
+
+            &-value {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 0.25rem 0.5rem;
+                transition: all 0.2s ease;
+                transform: translateY(1.75rem);
+
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: @background-color-main-lighter;
+                    opacity: 0.8;
+                    border-radius: 0 0 0.5rem 0.5rem;
+                    z-index: -1;
+                }
+
+                &-link {
+                    color: @text-color;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+
+                    &:hover {
+                        color: @placeholder-color;
+                    }
+                    &:active {
+                        color: @outline-color;
+                    }
+                }
+
+                &-copy {
+                    cursor: pointer;
+                    transition: all 0.15s ease;
+                    margin-left: 0.25rem;
+
+                    &:hover {
+                        color: @placeholder-color;
+                    }
+                    &:active {
+                        color: @outline-color;
+                    }
+                }
+            }
+        }
+
+        & span {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+
+.lds-ellipsis,
+.lds-ellipsis div {
+    box-sizing: border-box;
+}
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ellipsis div {
+    position: absolute;
+    top: 33.33333px;
+    width: 13.33333px;
+    height: 13.33333px;
+    border-radius: 50%;
+    background: currentColor;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+@keyframes arrow-to-left  {
+    0% {
+        transform: translateX(0);
+        background-color: transparent;
+    }
+    25% {
+        transform: translateX(-0.3rem);
+        background-color: transparent;
+    }
+    50% {
+        transform: translateX(-0.3rem);
+        background-color: transparent;
+    }
+    100% {
+        transform: translateX(0rem);
+    }
+}
+
+@keyframes arrow-to-right  {
+    0% {
+        transform: translateX(0);
+        background-color: transparent;
+    }
+    25% {
+        transform: translateX(0.3rem);
+        background-color: transparent;
+    }
+    50% {
+        transform: translateX(0.3rem);
+        background-color: transparent;
+    }
+    100% {
+        transform: translateX(0rem);
+    }
+}

@@ -1,0 +1,15 @@
+.authorization {
+  height: calc(100vh - 70px - 4.25rem);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.authorization__form {
+  position: relative;
+  z-index: 6;
+  height: 310px;
+  width: 650px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+/*# sourceMappingURL=authorization.css.map */

@@ -1,0 +1,67 @@
+.filter-selector .react-select__control {
+  background-color: var(--background-color-main);
+  color: var(--text-color);
+  max-height: 100%;
+  min-height: auto;
+  max-width: 29%;
+  border: var(--outline-color) 1px solid;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.filter-selector .react-select__control {
+  border-color: var(--outline-color);
+  box-shadow: none;
+}
+.filter-selector .react-select__multi-value {
+  max-height: 100px;
+  min-height: auto;
+  background-color: red;
+}
+.filter-selector .react-select__control:hover {
+  box-shadow: none;
+  border: var(--placeholder-color) 1px solid;
+}
+.filter-selector .react-select__menu {
+  background-color: var(--background-color-main);
+  border-radius: 0.25rem;
+  margin: 0.25rem 0;
+  max-width: 29%;
+  z-index: 100;
+}
+.filter-selector .react-select__menu-list {
+  border-radius: 0.25rem;
+  padding: 0;
+  border: var(--outline-color) 1px solid;
+}
+.filter-selector .react-select__option {
+  background-color: var(--background-color-main);
+  color: var(--text-color);
+  font-size: 1rem;
+  padding: 2px 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.filter-selector .react-select__option:active {
+  background-color: var(--text-color);
+  color: var(--background-color-main);
+}
+.filter-selector .react-select__option--is-selected {
+  background-color: var(--background-color-main);
+  color: var(--text-color);
+}
+.filter-selector .react-select__option--is-focused {
+  background-color: var(--placeholder-color);
+  color: var(--text-color);
+}
+.filter-selector .react-select__single-value {
+  color: var(--text-color);
+  font-size: 1rem;
+}
+.filter-selector .react-select__indicator-separator {
+  display: none;
+}
+.filter-selector .react-select__dropdown-indicator {
+  color: var(--text-color);
+  padding: 0 5px 0 0;
+}
+/*# sourceMappingURL=filterselect.css.map */

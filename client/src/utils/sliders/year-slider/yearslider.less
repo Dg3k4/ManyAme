@@ -1,0 +1,84 @@
+@import "../../style/color";
+
+.year-slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem 2rem;
+
+    .track {
+        width: 100%; // Ширина полоски слайдера
+        height: 0.25rem; // Толщина полоски слайдера
+        background-color: @background-color-main; // Цвет фона полоски слайдера
+        border-radius: 4px; // Радиус скругления полоски слайдера
+    }
+
+    .thumb {
+        position: relative;
+        width: 0.75rem; // Ширина ползунка
+        height: 1.25rem; // Высота ползунка
+        background-color: @text-color; // Цвет фона ползунка
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: @background-color-main 1px solid;
+        border-radius: 0.25rem;
+
+        .thumb-indicator {
+
+        }
+
+        &.dragged {
+            .thumb-indicator {
+                background-color: @placeholder-color; // Цвет индикатора при перемещении ползунка
+            }
+        }
+    }
+
+    .value {
+        padding: 0 0.15rem;
+    }
+}
+
+.year-slider .thumb {
+
+}
+
+.year-slider .track {
+    height: 6px; // Толщина трека (линии) слайдера
+    border-radius: 3px; // Скругление краев трека
+    width: 100%; // Ширина трека
+}
+
+.year-slider .slider {
+    display: flex;
+    align-items: center; // Выравнивание элементов по вертикали
+    justify-content: space-between; // Распределение минимального и максимального значений по краям
+    width: 100%; // Ширина контейнера слайдера
+    padding: 1rem 0.5rem; // Отступы сверху и снизу
+
+    & span {
+        display: flex;
+        justify-content: center;
+        width: 5rem; // Ширина элемента span для отображения минимального и максимального значений
+    }
+}
+
+.flag {
+    position: absolute;
+    top: 1.75rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .thumb-value {
+        position: absolute;
+        padding-top: 4.5px;
+        font-size: 0.9rem;
+    }
+
+    & svg {
+        fill: @background-color-main;
+    }
+}

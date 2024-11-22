@@ -1,0 +1,32 @@
+.main-button {
+  background-color: var(--background-color-main);
+  border: var(--outline-color) solid 1px;
+  border-radius: 5px;
+  height: 35px;
+  width: 150px;
+  color: var(--placeholder-color);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+.main-button .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--outline-color);
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 1s linear;
+  pointer-events: none;
+  z-index: -1;
+}
+@keyframes ripple {
+  to {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=mymainbutton.css.map */

@@ -1,0 +1,54 @@
+
+@background-color-main: var(--background-color-main);
+@background-color-main-lighter: var(--background-color-main-lighter);
+@outline-color: var(--outline-color);
+@text-color: var(--text-color);
+@text-color-darker: var(--text-color-darker);
+@placeholder-color: var(--placeholder-color);
+@rating-color: var(--rating-color);
+
+@hover-fade-material-dark: {
+    position: relative;
+
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        opacity: 0;
+        transition: opacity 500ms;
+        pointer-events: none;
+        z-index: 4;
+    }
+
+    &::before {
+        background: radial-gradient(
+                600px circle at var(--mouse-x) var(--mouse-y),
+                var(--outline-color),
+                var(--background-color-main)
+        );
+        backdrop-filter: blur(45px);
+        z-index: 3;
+    }
+
+    &::after {
+        background: radial-gradient(
+                400px circle at var(--mouse-x) var(--mouse-y),
+                var(--outline-color),
+                var(--background-color-main)
+        );
+        backdrop-filter: blur(15px);
+        z-index: 1;
+    }
+
+    &:hover::before {
+        opacity: 1;
+    }
+
+    &:hover::after {
+        opacity: 1;
+    }
+};

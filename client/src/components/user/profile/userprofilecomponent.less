@@ -1,0 +1,50 @@
+@import "../../../utils/style/color";
+
+.user-profile {
+    min-height: calc(100vh - 70px);
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    max-width: 90rem;
+
+    &__container {
+        width: 100%;
+
+        &-up {
+            display: flex;
+            width: 100%;
+            background-color: @background-color-main;
+            border: @outline-color 1px solid;
+            padding: 2.5rem;
+            border-radius: 5px;
+            color: @text-color;
+
+            &__avatar {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 150px;
+                width: 150px;
+                border-radius: 50%;
+                background-color: @background-color-main-lighter;
+                overflow: hidden;
+
+                & img {
+                    height: 100%;
+                }
+
+                & svg {
+                    fill: @text-color;
+                    padding-bottom: 0.75rem;
+                }
+            }
+
+            &__table {
+                margin-left: 1.5rem;
+
+                & .user-name {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}

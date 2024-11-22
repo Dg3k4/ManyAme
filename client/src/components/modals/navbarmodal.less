@@ -1,0 +1,61 @@
+@import "../../utils/style/color";
+
+.navbar-modal {
+    border: @outline-color 1px solid;
+    border-radius: 7px;
+    background-color: @background-color-main;
+    width: 135px;
+    top: -200px;
+    right: 37rem;
+    transform: translateX(51px);
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    &__spacer {
+        position: fixed;
+    }
+
+    &__is-active {
+        animation: fade-in 0.3s forwards;
+    }
+    &__is-hiding {
+        animation: fade-out 0.3s forwards;
+    }
+
+    &__fields {
+        display: flex;
+        align-items: center;
+        color: @text-color;
+        height: 35px;
+        font-size: 17px;
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 7px;
+        transition: 0.3s all ease;
+
+        &:hover {
+            background-color: @background-color-main-lighter;
+        }
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        top: -200px;
+    }
+    100% {
+        top: 84px;
+    }
+}
+@keyframes fade-out {
+    0% {
+        top: 84px;
+    }
+    100% {
+        top: -200px;
+    }
+}

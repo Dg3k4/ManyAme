@@ -1,0 +1,252 @@
+.navbar {
+  position: relative;
+  width: 100%;
+  z-index: 6;
+  top: 0;
+  position: sticky;
+  background-color: var(--background-color-main);
+  border-bottom: var(--outline-color) 1px solid;
+}
+.navbar::before,
+.navbar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 500ms;
+  pointer-events: none;
+  z-index: 4;
+}
+.navbar::before {
+  background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), var(--outline-color), var(--background-color-main));
+  backdrop-filter: blur(45px);
+  z-index: 3;
+}
+.navbar::after {
+  background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), var(--outline-color), var(--background-color-main));
+  backdrop-filter: blur(15px);
+  z-index: 1;
+}
+.navbar:hover::before {
+  opacity: 1;
+}
+.navbar:hover::after {
+  opacity: 1;
+}
+.navbar__content {
+  background-color: var(--background-color-main);
+  height: 70px;
+  max-width: 90rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem;
+  transition: all 0.2s ease;
+}
+.navbar__content__left {
+  text-decoration: none;
+}
+.navbar__content__right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.navbar__content__logo-container {
+  background-color: var(--background-color-main);
+  padding: 10px;
+  position: relative;
+  z-index: 6;
+  border: var(--outline-color) solid 1px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.navbar__content__logo {
+  color: var(--text-color);
+  font-family: AKONY, sans-serif;
+  font-size: 1.5rem;
+  height: 1.25rem;
+  text-decoration: none;
+  pointer-events: none;
+  user-select: none;
+}
+.navbar__content__change-theme {
+  height: 90px;
+  width: 90px;
+  position: absolute;
+  z-index: 6;
+  border-radius: 50%;
+  font-size: 40px;
+  border: transparent solid 2px;
+  background-color: var(--text-color);
+  cursor: pointer;
+  color: var(--background-color-main);
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-60%, -60%) rotate(90deg);
+}
+.navbar__content__change-theme-light {
+  height: 90px;
+  width: 90px;
+  position: absolute;
+  z-index: 6;
+  border-radius: 50%;
+  font-size: 40px;
+  border: transparent solid 2px;
+  background-color: var(--text-color);
+  cursor: pointer;
+  color: var(--background-color-main);
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-60%, -60%) rotate(-90deg);
+}
+.navbar__content__change-theme-light-icon-sun {
+  transform: translate(-35%, 35%) rotate(-20deg) scale(0.95);
+  transition: all 0.25s ease;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar__content__change-theme-light-icon-moon {
+  transform: translate(50%, -35%) rotate(-100deg) scale(0.95);
+  transition: all 0.25s ease;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar__content__change-theme-light:hover {
+  background-color: var(--background-color-main);
+  color: var(--text-color);
+  box-shadow: 0 0 50px 15px var(--text-color);
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.navbar__content__change-theme-icon-sun {
+  transform: translate(-35%, 35%) rotate(-20deg) scale(0.95);
+  transition: all 0.25s ease;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar__content__change-theme-icon-moon {
+  transform: translate(50%, -35%) rotate(-100deg) scale(0.95);
+  transition: all 0.25s ease;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar__content__change-theme:hover {
+  background-color: var(--background-color-main);
+  color: var(--text-color);
+  box-shadow: 0 0 30px 1px var(--text-color), 0 0 50px 10px var(--text-color-darker);
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+.navbar__content__menu {
+  position: relative;
+  z-index: 6;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--outline-color) solid 1px;
+  border-radius: 1000px;
+  background-color: var(--background-color-main);
+  overflow: hidden;
+}
+.navbar__content__menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 41px;
+  width: 41px;
+  border: var(--background-color-main) 2px solid;
+  border-radius: 1000px;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+.navbar__content__menu-container:hover {
+  background-color: var(--background-color-main-lighter);
+}
+.navbar__content__menu-container-icon:active {
+  fill: var(--text-color);
+}
+.navbar__content__menu-content {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0 1rem 0 0.25rem;
+}
+.navbar__content__menu-content__field {
+  max-width: 10rem;
+  padding: 0.25rem 0.5rem;
+}
+.navbar__content__menu-content a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+  height: 100%;
+  border-radius: 100px;
+}
+.navbar__content__menu-content a:hover {
+  color: var(--placeholder-color);
+}
+.navbar__content__menu-content a:active {
+  color: var(--text-color);
+  background-color: var(--background-color-main-lighter);
+}
+.navbar__content__menu-content__wrapper {
+  max-width: 0;
+}
+.navbar__content__menu-content__wrapper.open {
+  animation: menu-open 0.6s ease forwards;
+}
+.navbar__content__menu-content__wrapper.close {
+  animation: menu-close 0.3s ease forwards;
+}
+.size-1 {
+  width: 40px;
+  height: 40px;
+}
+.circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+}
+.circle-text text {
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+}
+@keyframes menu-open {
+  from {
+    max-width: 0;
+  }
+  to {
+    max-width: 30rem;
+  }
+}
+@keyframes menu-close {
+  from {
+    max-width: 30rem;
+  }
+  to {
+    max-width: 0;
+  }
+}
+/*# sourceMappingURL=navbar.css.map */
